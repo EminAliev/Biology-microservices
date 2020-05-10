@@ -18,14 +18,8 @@ public class ThemeController {
     private ThemeService themeService;
 
     @GetMapping("/theme")
-    public String getThemePage(Model model, HttpServletRequest request) {
-        List<ThemeDto> themes = themeService.listThemes();
-        model.addAttribute("themes", themes);
-        model.addAttribute("url", request.getContextPath());
-        if (request.getParameter("themeId") != null) {
-            model.addAttribute("theme", themes.get(Integer.parseInt(request.getParameter("themeId")) - 1));
-        }
-        return "themes";
+    public List<ThemeDto> getThemes() {
+        return themeService.listThemes();
     }
 
 }

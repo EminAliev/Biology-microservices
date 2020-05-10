@@ -5,6 +5,9 @@ zuul:
     themes:
       path: /themes-management/**
       serviceId: themes-service
+    news:
+      path: /news-management/**
+      serviceId: news-service
 
 spring:
   application:
